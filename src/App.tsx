@@ -1,25 +1,26 @@
-import { useEffect } from "react";
+// importing from react
+import { RouterProvider } from "react-router-dom";
+// importing components
+import Cursor from "./components/Cursor";
+import Parallax from "./components/Parallax";
+import router from "./config/router";
 
 export default function App() {
-    const cursor = document.querySelector('.cursor');
-    useEffect(() => {
-        document.addEventListener("mousemove", (e) => {
-            let leftPosition = e.pageX;
-            let topPosition = e.pageY;
-            cursor.style.left = leftPosition + "px";
-            cursor.style.top = topPosition + "px";
-        });
-    })
-
     return (
         <>
-            {/* cursor follower */}
-            <div className="cursor"></div>
+            <Cursor />
+            <Parallax />
 
-            {/* stars background */}
-            <div id="stars"></div>
-            <div id="stars2"></div>
-            <div id="stars3"></div>
+            <section className="wrapper main" id="main">
+                <div className="box">
+                    <div className="left-border"></div>
+                    <div className="right-border"></div>
+                    <div id="home"></div>
+
+                    {/* allowing different pages to render */}
+                    <RouterProvider router={router} />
+                </div>
+            </section>
         </>
     );
 };

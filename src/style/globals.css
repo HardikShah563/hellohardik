@@ -76,17 +76,16 @@ html {
     height: 30px;
     border-radius: 30%;
     border: 1px solid var(--white);
-    transform: translate(-25%, -25%);
+    transform: translate(-28%, -28%);
     pointer-events: none;
     transition: 1000ms ease-in-out;
     transition: width 200ms, height 200ms;
     z-index: 2;
 }
 
-li:hover>.cursor {
-    /* cursor: url('./res/custom-cursor-white-large.png'), auto; */
-    height: 50px;
-    width: 50px;
+:active > .cursor {
+    transition: all 100ms;
+    transform: scale(0.5) translateX(-17.5px) translateY(-17.5px);
 }
 
 .box {
@@ -192,7 +191,7 @@ main {
     border: 1px solid var(--red);
     letter-spacing: 1px;
     padding: 20px 4rem;
-    background: url(../res/paralellogram.svg);
+    background: url(../../public/paralellogram.svg);
     background-size: 800%;
     background-position: -8%;
     transition-duration: 300ms;
